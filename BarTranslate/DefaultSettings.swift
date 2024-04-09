@@ -15,8 +15,8 @@ enum TranslationProvider: String {
 }
 
 enum MenuBarIcon: String, CaseIterable, Identifiable {
-  case icon = "MenuIcon"
-  case iconMinimal = "MenuIconMinimal"
+  case original = "MenuIcon"
+  case minimal = "MenuIconMinimal"
   
   var id: String { self.rawValue }
 }
@@ -24,7 +24,7 @@ enum MenuBarIcon: String, CaseIterable, Identifiable {
 struct DefaultSettings {
   
   static let translationProvider = TranslationProvider.google
-  static let menuBarIcon = MenuBarIcon.icon
+  static let menuBarIcon = MenuBarIcon.original
   
   struct ToggleApp {
     static let key = Key(string: ";")!

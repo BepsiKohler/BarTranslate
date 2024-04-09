@@ -66,10 +66,11 @@ struct SettingsView: View {
               Text(key.description).tag(key.description)
             }
           }.labelsHidden()
+            
         }
       }
         
-      // Icon Toggle
+      // Menu Bar Icon Toggle
       HStack {
         Text("Menu Bar Icon")
         Picker("", selection: $menuBarIcon) {
@@ -81,10 +82,9 @@ struct SettingsView: View {
           }
         }
         .pickerStyle(.segmented)
-        .frame(width: 100) // Adjust the width as necessary
+        .frame(width: 100)
         Spacer()
       }
-      .padding(.vertical)
       
       // Version & Updates
       VStack(spacing: 2) {
