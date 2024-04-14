@@ -13,10 +13,10 @@ struct TranslateView: View {
   
   var body: some View {
     VStack(spacing: 0) {
-      WebView().background(.white)
+      WebView().background(.clear)
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .background(.white)
+    .background(.clear)
   }
 }
 
@@ -31,6 +31,8 @@ struct WebView: NSViewRepresentable {
     config.defaultWebpagePreferences = prefs
     
     let webView = WKWebView(frame: .zero, configuration: config)
+    webView.setValue(false, forKey: "drawsBackground")
+      
     return webView
   }
   

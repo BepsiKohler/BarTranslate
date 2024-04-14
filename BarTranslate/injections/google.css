@@ -1,12 +1,65 @@
+/* Light Mode */
+:root {
+  --color-primary: black;
+  --color-secondary: rgba(0, 0, 0, 0.15);
+}
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: white;
+    --color-secondary: rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* Hide elements */
 .pGxpHc,                  /* Page header */
 .VjFXz,                   /* Space behind page header */
-.a88hkc,                  /* "Sent feedback" button */
-.FFpbKc,                  /* Microphone input, amount of words */
+.qgyq3b,                  /* "Sent feedback" button */
+.gHNJvf,                  /* Microphone input, amount of words */
 .KIXMEf,                  /* Share button */
 .a8FIud,                  /* Favorite button */
 .nG3XIb,                  /* Rate translation button */
 .hgbeOc,                  /* Empty space at top */
 nav {
-  /* Buttons below translate input */
   display: none !important;
+}
+
+*:not(
+  .ksE5nf,                /* Frequency indicators in dictionary */
+  .qSb8Pe                 /* Languge selection list items */
+){
+  color: var(--color-primary) !important;
+  background: transparent !important;
+  outline-color: var(--color-secondary) !important;
+  border-color: var(--color-secondary) !important;
+}
+
+/* Set hover color in language selection */
+.qSb8Pe:hover {
+  background: var(--color-secondary) !important;
+}
+
+/* Give buttons in "more translations" a non transparent border */
+.FpAlrf{
+  background: var(--color-secondary) !important;
+  border-radius: 5px
+}
+
+/* Remove gradient from dictionary header */
+.X4DQ0::after {
+  background: transparent !important;
+}
+
+/* Blur background of popup elements
+ Since the background is transparent this ensures elements behind it will be invisible/blurred */
+[class*="VfPpkd"][class*="XxIAqe"],   /* General popup windows */
+.Bcbxbe,                              /* Popup suggestions on typing */
+.NWlwsb,                              /* Popup suggestions on translation click */
+.B2mKhd                               /* Reviewed popup */
+{
+  -webkit-backdrop-filter: blur(25px) !important;
+}
+/* Make suggestions highlight on hover */
+.Bcbxbe:hover {
+  background-color: var(--color-secondary) !important;
 }
